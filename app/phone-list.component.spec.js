@@ -11,9 +11,19 @@ describe('phoneList', function() {
     it('should create a `phones` model with 3 phones', inject(function($componentController) {
       var ctrl = $componentController('phoneList');
 
-      expect(ctrl.phones.length).toBe(3);
+      expect(ctrl.phones.length).toBe(5);
     }));
 
   });
 
+});
+
+describe('greetUser', function() {
+	beforeEach(module('phonecatApp'));
+
+	it('Should say Hello', inject(function($componentController) {
+		var ctrl = $componentController('greetUser');
+		expect(ctrl.user).toMatch("world");	
+	}));
+	
 });
